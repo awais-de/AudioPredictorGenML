@@ -61,7 +61,11 @@ python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}')"
 
 ### Remote GPU Setup
 
-For SSH-based GPU training on cloud instances, see [docs/20260203_SSH_REMOTE_GUIDE.md](docs/20260203_SSH_REMOTE_GUIDE.md)
+For SSH-based GPU training on cloud instances (AWS, Lambda Labs, GCP):
+1. SSH to your instance: `ssh -i key.pem user@instance.com`
+2. Clone repository and run setup: `bash setup.sh`
+3. Set environment variable: `export AUDIO_DEVICE=cuda`
+4. Start training with GPU acceleration
 
 ---
 
@@ -204,11 +208,9 @@ AudioPredictorGenML/
 │   ├── scratch_code/         # Experimental code
 │   └── README_SANDBOX.md     # Sandbox usage guide
 │
-├── docs/                     # Documentation (.gitignored)
-│   ├── 20260203_LEARNING_PATH.md      # 7-day fast-track
-│   ├── 20260203_RESOURCES.md          # Research papers
-│   ├── 20260203_SSH_REMOTE_GUIDE.md   # GPU setup
-│   └── ...                             # Other guides
+├── docs/                     # Public documentation (Git-tracked)
+│   ├── RESOURCES.md          # Research papers & references
+│   └── SSH_REMOTE_GUIDE.md   # GPU setup guide
 │
 ├── configs/                  # YAML experiment configs (Git-tracked)
 │   ├── day4_toy.yaml
@@ -224,8 +226,8 @@ AudioPredictorGenML/
 ```
 
 **Git Tracking Policy**:
-- ✅ **Tracked**: `src/`, `configs/`, `tests/`, `README.md`, `requirements.txt`, `LICENSE`, `CITATION.cff`
-- ❌ **Ignored**: `docs/`, `experiments/`, `sandbox/`, `data/`, model checkpoints, logs
+- ✅ **Tracked**: `src/`, `configs/`, `tests/`, `docs/`, `README.md`, `requirements.txt`, `LICENSE`, `CITATION.cff`
+- ❌ **Ignored**: `copilot_working_notes/`, `experiments/`, `sandbox/`, `data/`, model checkpoints, logs
 
 ---
 
@@ -289,31 +291,63 @@ experiments/exp_001_local_test/
 
 ---
 
-## 8. Learning Path & Documentation
+## 8. Running Experiments
 
-**→ START HERE**: [docs/20260203_LEARNING_PATH.md](docs/20260203_LEARNING_PATH.md) ⭐
+### Local Training
 
-### 7-Day Fast-Track
+```bash
+# Activate environment
+source venv/bin/activate
 
-| Day | Topic | Duration | Key Output |
-|-----|-------|----------|------------|
-| 1 | DSP Basics | 8-10h | FFT/STFT visualization |
-| 2 | LPC Predictor | 8-10h | Baseline implementation |
-| 3 | Lossless Coding | 8-10h | Entropy-based compression |
-| 4 | PyTorch Setup | 8-10h | Toy CNN training |
-| 5 | Causal CNN | 8-10h | WaveNet-style architecture |
-| 6 | Baseline Evaluation | 8-10h | CNN vs LPC comparison |
-| 7 | Autoregressive Generation | 8-10h | Sample-by-sample synthesis |
+# Train toy model (quick test)
+python src/train/train.py --config configs/day4_toy.yaml \
+  --exp_id exp_001_local_test
 
-### All Documentation
+# Results saved to experiments/exp_001_local_test/
+```
 
-All guides in `docs/` folder (local-only, not Git-tracked):
-- **20260203_LEARNING_PATH.md** — 7-day fast-track with daily tasks
-- **20260203_RESOURCES.md** — 50+ curated research papers
-- **20260203_SSH_REMOTE_GUIDE.md** — Remote GPU execution guide
-- **20260203_QUICKSTART.md** — Quick command reference
+### Remote GPU Training
 
-> **Note**: Files in `docs/` have timestamp prefix (YYYYMMDD_) for version control
+```bash
+# SSH to GPU instance
+ssh -i ~/.ssh/key.pem user@gpu.instance.com
+
+# Clone repository & setup
+git clone https://github.com/awais-de/AudioPredictorGenML.git
+cd AudioPredictorGenML
+bash setup.sh
+
+# Start training with GPU
+AUDIO_DEVICE=cuda python src/train/train.py \
+  --config configs/day5_causal_cnn.yaml \
+  --exp_id exp_002_gpu_run \
+  --gpu_id 0
+
+# Monitor from local machine
+ssh user@gpu.instance.com \
+  "tail -f ~/AudioPredictorGenML/experiments/exp_002_gpu_run/logs/train.log"
+```
+
+### Experiment Tracking
+
+Each experiment creates isolated folder:
+```
+experiments/exp_001_local_test/
+├── config.yaml          # Copy of experiment config
+├── metadata.json        # Results, metrics, timestamps
+├── checkpoints/
+│   ├── epoch_010.pth
+│   ├── epoch_020.pth
+│   └── best_model.pth
+├── logs/
+│   ├── train.log
+│   └── tensorboard/
+├── results/
+│   ├── metrics.json
+│   └── predictions.wav
+└── artifacts/
+    └── generated_samples.wav
+```
 
 ---
 
@@ -334,7 +368,7 @@ All guides in `docs/` folder (local-only, not Git-tracked):
 
 ### Full Bibliography
 
-See [docs/20260203_RESOURCES.md](docs/20260203_RESOURCES.md) for 50+ curated references
+See [docs/RESOURCES.md](docs/RESOURCES.md) for complete curated references
 
 ---
 
@@ -342,7 +376,7 @@ See [docs/20260203_RESOURCES.md](docs/20260203_RESOURCES.md) for 50+ curated ref
 
 | Phase | Weeks | Focus | Deliverables |
 |-------|-------|-------|--------------|
-| **1. Foundations** | 1-2 | DSP, LPC, PyTorch basics | 7-day fast-track completion |
+| **1. Foundations** | 1-2 | DSP, LPC, PyTorch basics | Baseline implementations |
 | **2. Implementation** | 2-4 | Model design & coding | Causal CNN implementation |
 | **3. Training** | 5-6 | Experiments & optimization | Trained models, metrics |
 | **4. Generation** | 7-8 | Autoregressive synthesis | Generated audio samples |
@@ -418,4 +452,4 @@ This is an academic research project for Masters thesis completion. External con
 
 ---
 
-**Ready to start? Open [docs/20260203_LEARNING_PATH.md](docs/20260203_LEARNING_PATH.md) and begin Day 1! 🚀**
+**Ready to start? Clone the repository and run `bash setup.sh` to begin! 🚀**

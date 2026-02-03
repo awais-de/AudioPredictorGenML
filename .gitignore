@@ -6,8 +6,8 @@
 # ----------------------------------------
 # Project-Specific Directories
 # ----------------------------------------
-# Generated documentation (Copilot, local reference only)
-docs/
+# Copilot working notes (temporary AI-generated files, local only)
+copilot_working_notes/
 
 # Experiments folder (keep locally, sync separately to cloud/archive)
 experiments/
