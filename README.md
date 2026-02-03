@@ -287,67 +287,7 @@ experiments/exp_001_local_test/
 
 ---
 
-## 8. Running Experiments
-
-### Local Training
-
-```bash
-# Activate environment
-source venv/bin/activate
-
-# Train toy model (quick test)
-python src/train/train.py --config configs/day4_toy.yaml \
-  --exp_id exp_001_local_test
-
-# Results saved to experiments/exp_001_local_test/
-```
-
-### Remote GPU Training
-
-```bash
-# SSH to GPU instance
-ssh -i ~/.ssh/key.pem user@gpu.instance.com
-
-# Clone repository & setup
-git clone https://github.com/awais-de/AudioPredictorGenML.git
-cd AudioPredictorGenML
-bash setup.sh
-
-# Start training with GPU
-AUDIO_DEVICE=cuda python src/train/train.py \
-  --config configs/day5_causal_cnn.yaml \
-  --exp_id exp_002_gpu_run \
-  --gpu_id 0
-
-# Monitor from local machine
-ssh user@gpu.instance.com \
-  "tail -f ~/AudioPredictorGenML/experiments/exp_002_gpu_run/logs/train.log"
-```
-
-### Experiment Tracking
-
-Each experiment creates isolated folder:
-```
-experiments/exp_001_local_test/
-├── config.yaml          # Copy of experiment config
-├── metadata.json        # Results, metrics, timestamps
-├── checkpoints/
-│   ├── epoch_010.pth
-│   ├── epoch_020.pth
-│   └── best_model.pth
-├── logs/
-│   ├── train.log
-│   └── tensorboard/
-├── results/
-│   ├── metrics.json
-│   └── predictions.wav
-└── artifacts/
-    └── generated_samples.wav
-```
-
----
-
-## 9. Key References
+## 8. Key References
 
 ### Foundational Papers
 
@@ -368,7 +308,7 @@ See [docs/RESOURCES.md](docs/RESOURCES.md) for complete curated references
 
 ---
 
-## 10. Project Timeline
+## 9. Project Timeline
 
 | Phase | Weeks | Focus | Deliverables |
 |-------|-------|-------|--------------|
@@ -383,7 +323,7 @@ See [docs/RESOURCES.md](docs/RESOURCES.md) for complete curated references
 
 ---
 
-## 11. Citation
+## 10. Citation
 
 If you use this work in your research, please cite:
 
@@ -402,7 +342,7 @@ See [CITATION.cff](CITATION.cff) for structured citation metadata.
 
 ---
 
-## 12. Acknowledgments
+## 11. Acknowledgments
 
 This research project is conducted under the supervision of:
 
@@ -414,7 +354,7 @@ Special thanks to the open-source community for PyTorch, librosa, and related au
 
 ---
 
-## 13. License
+## 12. License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -435,13 +375,13 @@ furnished to do so, subject to the following conditions:
 
 ---
 
-## 14. Contributing
+## 13. Contributing
 
 This is an academic research project for Masters thesis completion. External contributions are not accepted during the active research period. After thesis submission, the repository may be opened for community contributions.
 
 ---
 
-## 15. Contact
+## 14. Contact
 
 - **Student**: Muhammad Awais — m.awais@tu-ilmenau.de
 - **Supervisor**: Prof. Gerald Schuller — gerald.schuller@tu-ilmenau.de
