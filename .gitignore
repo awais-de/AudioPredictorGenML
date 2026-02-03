@@ -1,0 +1,318 @@
+# ========================================
+# AudioPredictorGenML - Git Ignore
+# Masters Research Project
+# ========================================
+
+# ----------------------------------------
+# Project-Specific Directories
+# ----------------------------------------
+# Generated documentation (Copilot, local reference only)
+docs/
+
+# Experiments folder (keep locally, sync separately to cloud/archive)
+experiments/
+
+# Sandbox folder (user's personal exploration space)
+sandbox/
+
+# Results folder (use experiments/ instead for organized tracking)
+results/
+
+# ----------------------------------------
+# Python
+# ----------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ----------------------------------------
+# Virtual Environments
+# ----------------------------------------
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+.virtualenv/
+pyenv/
+.conda/
+
+# ----------------------------------------
+# IDE & Editors
+# ----------------------------------------
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw[a-z]
+*.un~
+Session.vim
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Atom
+.atom/
+
+# ----------------------------------------
+# Jupyter Notebook
+# ----------------------------------------
+.ipynb_checkpoints/
+*.ipynb
+*-checkpoint.ipynb
+
+# ----------------------------------------
+# Machine Learning & Deep Learning
+# ----------------------------------------
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+checkpoint/
+checkpoints/
+lightning_logs/
+
+# TensorFlow
+*.h5
+*.pb
+*.tflite
+saved_model/
+tf_logs/
+
+# Weights & Biases
+wandb/
+
+# MLflow
+mlruns/
+
+# Model files
+*.pkl
+*.pickle
+*.joblib
+*.model
+*.weights
+
+# Training logs
+*.log
+*.logs
+log/
+logs/
+tensorboard/
+
+# ----------------------------------------
+# Audio Files & Data
+# ----------------------------------------
+# Audio formats
+data/*.wav
+data/*.mp3
+data/*.flac
+data/*.ogg
+data/*.aac
+data/*.m4a
+data/*.wma
+data/*.aiff
+data/*.au
+
+# Compressed archives
+data/*.tar
+data/*.tar.gz
+data/*.tgz
+data/*.zip
+data/*.7z
+data/*.rar
+data/*.bz2
+data/*.xz
+
+# Large datasets (keep small samples only)
+data/train/
+data/test/
+data/val/
+data/raw/
+data/processed/
+
+# ----------------------------------------
+# Results & Outputs
+# ----------------------------------------
+*.csv
+*.json
+*.pkl
+*.npy
+*.npz
+*.mat
+*.hdf5
+!requirements.txt
+!setup.py
+!**/config.yaml
+!**/metadata_template.json
+
+# Plots & visualizations
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+*.eps
+!docs/figures/*.png
+!docs/figures/*.pdf
+
+# Generated audio samples
+generated/
+samples/
+output/
+
+# ----------------------------------------
+# OS-Specific
+# ----------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ----------------------------------------
+# Environment & Configuration
+# ----------------------------------------
+.env
+.env.local
+.env.*.local
+.envrc
+*.env
+config.local.yaml
+secrets.yaml
+
+# ----------------------------------------
+# Testing & Coverage
+# ----------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+nosetests.xml
+
+# ----------------------------------------
+# Documentation Build
+# ----------------------------------------
+docs/_build/
+docs/.doctrees/
+.sphinx/
+site/
+
+# ----------------------------------------
+# Version Control
+# ----------------------------------------
+*.orig
+*.rej
+*.patch
+
+# ----------------------------------------
+# Temporary & Cache
+# ----------------------------------------
+*.tmp
+*.temp
+*.cache
+.cache/
+tmp/
+temp/
+*.bak
+*.backup
+
+# ----------------------------------------
+# SSH & Keys (CRITICAL - never commit)
+# ----------------------------------------
+*.pem
+*.key
+*.ppk
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+.ssh/
+
+# ----------------------------------------
+# Database
+# ----------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# ----------------------------------------
+# Profiling
+# ----------------------------------------
+*.prof
+*.lprof
+.profraw
+
+# ----------------------------------------
+# Miscellaneous
+# ----------------------------------------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.hypothesis/

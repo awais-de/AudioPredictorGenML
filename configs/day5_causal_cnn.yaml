@@ -1,0 +1,20 @@
+"""Configuration for causal CNN training (Day 5)."""
+
+model:
+  type: causal_cnn
+  num_layers: 4
+  num_filters: 64
+  kernel_size: 3
+  max_dilation: 16
+
+training:
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.001
+  seq_length: 512
+  early_stopping_patience: 3
+  
+data:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  sample_rate: 16000

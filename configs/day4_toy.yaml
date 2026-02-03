@@ -1,0 +1,19 @@
+"""Configuration for toy CNN training (Day 4)."""
+
+model:
+  type: causal_cnn
+  num_layers: 3
+  num_filters: 32
+  kernel_size: 3
+  max_dilation: 8
+
+training:
+  batch_size: 32
+  epochs: 5
+  learning_rate: 0.001
+  seq_length: 256
+  
+data:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  sample_rate: 16000

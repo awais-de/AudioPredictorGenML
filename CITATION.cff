@@ -1,0 +1,103 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "AudioPredictorGenML: Deep Generative Model for Audio Prediction and Synthesis"
+version: 1.0.0
+date-released: 2026-02-03
+url: "https://github.com/awais-de/AudioPredictorGenML"
+repository-code: "https://github.com/awais-de/AudioPredictorGenML"
+license: MIT
+keywords:
+  - audio-prediction
+  - deep-learning
+  - lossless-coding
+  - wavenet
+  - causal-convolutions
+  - linear-predictive-coding
+  - autoregressive-generation
+  - pytorch
+  - audio-synthesis
+
+authors:
+  - family-names: "Awais"
+    given-names: "Muhammad"
+    email: "m.awais@tu-ilmenau.de"
+    affiliation: "Technische Universität Ilmenau"
+
+supervisors:
+  - family-names: "Schuller"
+    given-names: "Gerald"
+    email: "gerald.schuller@tu-ilmenau.de"
+    affiliation: "Technische Universität Ilmenau, Institute for Media Technology"
+    role: "Primary Supervisor"
+  
+  - family-names: "Disch"
+    given-names: "Sascha"
+    name-particle: "Dr.-Ing."
+    email: "sascha.disch@iis.fraunhofer.de"
+    affiliation: "Fraunhofer Institute for Integrated Circuits IIS"
+    role: "Co-Supervisor"
+  
+  - family-names: "Niedermeier"
+    given-names: "Andreas"
+    name-particle: "Dipl.-Math."
+    email: "andreas.niedermeier@iis.fraunhofer.de"
+    affiliation: "Fraunhofer Institute for Integrated Circuits IIS"
+    role: "Co-Supervisor"
+
+abstract: >
+  AudioPredictorGenML is a Masters-level research project investigating
+  neural network-based predictors for lossless audio coding. The project
+  implements and evaluates causal CNN architectures inspired by WaveNet
+  and FFTNet, comparing their performance against classical Linear
+  Predictive Coding (LPC) baselines. The framework includes autoregressive
+  generation capabilities, comprehensive evaluation metrics, and
+  SSH-compatible training infrastructure for GPU acceleration.
+
+references:
+  - type: article
+    title: "WaveNet: A Generative Model for Raw Audio"
+    authors:
+      - family-names: "van den Oord"
+        given-names: "Aaron"
+      - family-names: "Dieleman"
+        given-names: "Sander"
+      - family-names: "Zen"
+        given-names: "Heiga"
+    year: 2016
+    journal: "arXiv preprint"
+    identifiers:
+      - type: arxiv
+        value: "1609.03499"
+  
+  - type: conference-paper
+    title: "FFTNet: A Real-Time Speaker-Dependent Neural Vocoder"
+    authors:
+      - family-names: "Jin"
+        given-names: "Zeyu"
+      - family-names: "Finkelstein"
+        given-names: "Adam"
+    year: 2018
+    conference: "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+  
+  - type: article
+    title: "Linear Prediction: A Tutorial Review"
+    authors:
+      - family-names: "Makhoul"
+        given-names: "John"
+    year: 1975
+    journal: "Proceedings of the IEEE"
+    volume: 63
+    issue: 4
+
+preferred-citation:
+  type: thesis
+  thesis-type: "Masters Thesis"
+  title: "Deep Generative Model for Audio Prediction and Synthesis using Machine Learning"
+  authors:
+    - family-names: "Awais"
+      given-names: "Muhammad"
+  year: 2026
+  institution:
+    name: "Technische Universität Ilmenau"
+  department: "Institute for Media Technology"
