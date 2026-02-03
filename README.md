@@ -192,7 +192,7 @@ AudioPredictorGenML/
 │       ├── dsp_basics.py
 │       └── config.py
 │
-├── experiments/              # Experiment tracking (.gitignored)
+├── experiments/              # Experiment tracking
 │   ├── exp_001_lpc_baseline/
 │   │   ├── config.yaml       # Experiment configuration
 │   │   ├── metadata.json     # Results & metadata
@@ -202,22 +202,22 @@ AudioPredictorGenML/
 │   │   └── artifacts/        # Generated audio files
 │   └── README_EXPERIMENTS.md # Experiment tracking guide
 │
-├── sandbox/                  # Exploratory learning space (.gitignored)
+├── sandbox/                  # Exploratory learning space
 │   ├── notebooks/            # Jupyter notebooks
 │   ├── scripts/              # Test scripts
 │   ├── scratch_code/         # Experimental code
 │   └── README_SANDBOX.md     # Sandbox usage guide
 │
-├── docs/                     # Public documentation (Git-tracked)
+├── docs/                     # Public documentation
 │   ├── RESOURCES.md          # Research papers & references
 │   └── SSH_REMOTE_GUIDE.md   # GPU setup guide
 │
-├── configs/                  # YAML experiment configs (Git-tracked)
+├── configs/                  # YAML experiment configs
 │   ├── day4_toy.yaml
 │   └── day5_causal_cnn.yaml
 │
-├── data/                     # Dataset location (.gitignored)
-├── tests/                    # Unit tests (Git-tracked)
+├── data/                     # Dataset location
+├── tests/                    # Unit tests
 ├── requirements.txt          # Python dependencies
 ├── .gitignore                # Git exclusion rules
 ├── LICENSE                   # MIT License
