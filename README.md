@@ -222,12 +222,8 @@ AudioPredictorGenML/
 ├── .gitignore                # Git exclusion rules
 ├── LICENSE                   # MIT License
 ├── CITATION.cff              # Citation metadata
-└── README.md                 # This file (Git-tracked)
+└── README.md                 # This file
 ```
-
-**Git Tracking Policy**:
-- ✅ **Tracked**: `src/`, `configs/`, `tests/`, `docs/`, `README.md`, `requirements.txt`, `LICENSE`, `CITATION.cff`
-- ❌ **Ignored**: `copilot_working_notes/`, `experiments/`, `sandbox/`, `data/`, model checkpoints, logs
 
 ---
 
